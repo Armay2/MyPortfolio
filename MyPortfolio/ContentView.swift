@@ -8,14 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+    @EnvironmentObject var dataController: DataController
+    
+    var interests: [Interest] {
+        let filter = dataController.selectedFilter ?? .all
+        var allInterest: [Interest]
+        
+        if let tag = filter.tag {
+            allInterest = tag.interests?.allObjects as? [Interest] ?? []
+        } else {
+            let request = Interest.fetchRequest()
+            request.predicate = NSPredicate(format: "modificationDate > %@", filter.minModificationDate as NSDate)
+            allInterest = (try? dataController.container.viewContext.fetch(request)) ?? []
         }
-        .padding()
+        return allInterest.sorted()
+    }
+    
+    var body: some View {
+        List {
+            ForEach(interests) { interest in
+                InterestRow(interest: interest)
+            }.onDelete(perform: delete)
+        }
+    }
+    
+    func delete(_ offsets: IndexSet) {
+        for offset in offsets {
+            let item = interests[offset]
+            dataController.delete(item)
+        }
     }
 }
 
