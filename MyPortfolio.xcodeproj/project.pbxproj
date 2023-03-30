@@ -17,6 +17,8 @@
 		5131915B29D1F293008592CD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5131915A29D1F293008592CD /* DetailView.swift */; };
 		5131915D29D1F3C5008592CD /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5131915C29D1F3C5008592CD /* Filter.swift */; };
 		517EA39729D498C7008EC13B /* InterestRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517EA39629D498C7008EC13B /* InterestRow.swift */; };
+		517EA39929D4EA28008EC13B /* InterestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517EA39829D4EA28008EC13B /* InterestView.swift */; };
+		517EA39B29D4EA89008EC13B /* NoInterestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517EA39A29D4EA89008EC13B /* NoInterestView.swift */; };
 		517EB19429D21577003EC831 /* Interest-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517EB19329D21577003EC831 /* Interest-CoreDataHelpers.swift */; };
 		517EB19629D21D1D003EC831 /* Tag-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517EB19529D21D1D003EC831 /* Tag-CoreDataHelpers.swift */; };
 /* End PBXBuildFile section */
@@ -35,6 +37,8 @@
 		5131915A29D1F293008592CD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		5131915C29D1F3C5008592CD /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		517EA39629D498C7008EC13B /* InterestRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestRow.swift; sourceTree = "<group>"; };
+		517EA39829D4EA28008EC13B /* InterestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestView.swift; sourceTree = "<group>"; };
+		517EA39A29D4EA89008EC13B /* NoInterestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInterestView.swift; sourceTree = "<group>"; };
 		517EB19329D21577003EC831 /* Interest-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interest-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		517EB19529D21D1D003EC831 /* Tag-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +81,8 @@
 				517EA39629D498C7008EC13B /* InterestRow.swift */,
 				5131914129D10724008592CD /* ContentView.swift */,
 				5131915A29D1F293008592CD /* DetailView.swift */,
+				517EA39829D4EA28008EC13B /* InterestView.swift */,
+				517EA39A29D4EA89008EC13B /* NoInterestView.swift */,
 				517EB19329D21577003EC831 /* Interest-CoreDataHelpers.swift */,
 				517EB19529D21D1D003EC831 /* Tag-CoreDataHelpers.swift */,
 				5131915129D10A5B008592CD /* Main.xcdatamodeld */,
@@ -167,12 +173,14 @@
 			files = (
 				5131915D29D1F3C5008592CD /* Filter.swift in Sources */,
 				517EB19629D21D1D003EC831 /* Tag-CoreDataHelpers.swift in Sources */,
+				517EA39929D4EA28008EC13B /* InterestView.swift in Sources */,
 				5131915329D10A5B008592CD /* Main.xcdatamodeld in Sources */,
 				517EB19429D21577003EC831 /* Interest-CoreDataHelpers.swift in Sources */,
 				5131915B29D1F293008592CD /* DetailView.swift in Sources */,
 				5131915529D10D37008592CD /* DataController.swift in Sources */,
 				517EA39729D498C7008EC13B /* InterestRow.swift in Sources */,
 				5131915929D1F286008592CD /* SidebarView.swift in Sources */,
+				517EA39B29D4EA89008EC13B /* NoInterestView.swift in Sources */,
 				5131914229D10724008592CD /* ContentView.swift in Sources */,
 				5131914029D10724008592CD /* MyPortfolioApp.swift in Sources */,
 			);

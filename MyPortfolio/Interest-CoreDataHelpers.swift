@@ -26,9 +26,25 @@ extension Interest {
         get { modificationDate ?? .now}
     }
     
+    var interestStatus: String {
+        return isDoing ? "Currently doing" : "Not doing"
+    }
+    
     var interestTags: [Tag] {
         let result = tags?.allObjects as? [Tag] ?? []
         return result.sorted()
+    }
+    
+    var interestTagList: String {
+        guard let tags else {
+            return "No tags"
+        }
+        
+        if tags.count == 0 {
+            return "No tags"
+        } else {
+            return interestTags.map(\.tagName).formatted()
+        }
     }
 
     static var exemple: Interest {

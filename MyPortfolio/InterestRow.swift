@@ -23,7 +23,7 @@ struct InterestRow: View {
                         .font(.headline)
                         .lineLimit(1)
                     
-                    Text("No tags")
+                    Text(interest.interestTagList)
                         .foregroundStyle(.secondary)
                         .lineLimit(1)
                 }
