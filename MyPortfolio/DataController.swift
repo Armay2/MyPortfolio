@@ -7,6 +7,15 @@
 
 import CoreData
 
+enum SortType: String {
+    case dateCreated = "creationDate"
+    case dateModified  = "modificationDate"
+}
+
+enum Status {
+    case all, doing, notDoing
+}
+
 class DataController: ObservableObject {
     let container: NSPersistentContainer
     
@@ -16,6 +25,12 @@ class DataController: ObservableObject {
     @Published var filterText = ""
     @Published var filterTokens = [Tag]()
     
+    @Published var filterEnabled = false
+    @Published var filterPriority = -1
+    @Published var filterStatus = Status.all
+    @Published var sortType = SortType.dateCreated
+    @Published var sortNewestFirst = true
+
     private var saveTask: Task<Void, Error>?
     
     static var preview: DataController = {
@@ -77,7 +92,7 @@ class DataController: ObservableObject {
                 interet.content = "Desciption here"
                 interet.creationDate = .now
                 interet.isDoing = Bool.random()
-                interet.priotity = Int16.random(in: 0...2)
+                interet.priority = Int16.random(in: 0...2)
                 tag.addToInterests(interet)
                 
             }
@@ -170,8 +185,24 @@ class DataController: ObservableObject {
 
         }
         
+        if filterEnabled {
+            if filterPriority >= 0 {
+                let priortityPredicate = NSPredicate(format: "priority = %d", filterPriority)
+                predicates.append(priortityPredicate)
+            }
+            
+            if filterStatus != .all {
+                let lookForDoing = filterStatus == .doing
+                let statusPredicate = NSPredicate(format: "isDoing = %@", NSNumber (value: lookForDoing))
+                predicates.append(statusPredicate)
+            }
+            
+        }
+        
+        
         let request = Interest.fetchRequest()
         request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        request.sortDescriptors = [NSSortDescriptor(key: sortType.rawValue, ascending: sortNewestFirst)]
         
         let allInterest = (try? container.viewContext.fetch(request)) ?? []
         

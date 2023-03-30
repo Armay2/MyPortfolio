@@ -16,7 +16,7 @@ struct InterestRow: View {
             HStack {
                 Image(systemName: "exclamationmark.circle")
                     .imageScale(.large)
-                .opacity(interest.priotity == 2 ? 1: 0)
+                .opacity(interest.priority == 2 ? 1: 0)
                 
                 VStack(alignment: .leading) {
                     Text(interest.interestTitle)

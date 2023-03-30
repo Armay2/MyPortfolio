@@ -26,7 +26,7 @@ struct InterestView: View {
                     
                 }
                 
-                Picker("Priority", selection: $interest.priotity) {
+                Picker("Priority", selection: $interest.priority) {
                     Text ("Low").tag(Int16(0))
                     Text ("Medium").tag(Int16(1))
                     Text ("High" ).tag(Int16(2))

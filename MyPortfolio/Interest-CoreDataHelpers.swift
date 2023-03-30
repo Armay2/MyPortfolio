@@ -54,7 +54,7 @@ extension Interest {
         let interest = Interest(context: viewContext)
         interest.title = "Exemple Title"
         interest.content = "This is an exemple interest"
-        interest.priotity = 2
+        interest.priority = 2
         interest.creationDate = .now
         return interest
     }
