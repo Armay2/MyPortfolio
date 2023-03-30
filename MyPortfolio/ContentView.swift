@@ -10,29 +10,20 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var dataController: DataController
     
-    var interests: [Interest] {
-        let filter = dataController.selectedFilter ?? .all
-        var allInterest: [Interest]
-        
-        if let tag = filter.tag {
-            allInterest = tag.interests?.allObjects as? [Interest] ?? []
-        } else {
-            let request = Interest.fetchRequest()
-            request.predicate = NSPredicate(format: "modificationDate > %@", filter.minModificationDate as NSDate)
-            allInterest = (try? dataController.container.viewContext.fetch(request)) ?? []
-        }
-        return allInterest.sorted()
-    }
-    
     var body: some View {
         List(selection: $dataController.selectedInterest) {
-            ForEach(interests) { interest in
+            ForEach(dataController.interestsForSelectedFilter()) { interest in
                 InterestRow(interest: interest)
             }.onDelete(perform: delete)
         }
+        .navigationTitle("Interest")
+        .searchable(text: $dataController.filterText, tokens: $dataController.filterTokens, suggestedTokens: .constant(dataController.suggestedFilterTokens), prompt: "Filter interest, or type # to add tags") { tag in
+            Text(tag.tagName)        }
     }
     
     func delete(_ offsets: IndexSet) {
+        let interests = dataController.interestsForSelectedFilter()
+        
         for offset in offsets {
             let item = interests[offset]
             dataController.delete(item)
