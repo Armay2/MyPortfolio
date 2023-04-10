@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		510BDD6129E4B24300EB6FE3 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BDD6029E4B24300EB6FE3 /* Bundle-Decodable.swift */; };
+		510BDD6429E4BCB400EB6FE3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 510BDD6229E4BCB400EB6FE3 /* Colors.xcassets */; };
+		510BDD6529E4BCB400EB6FE3 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 510BDD6329E4BCB400EB6FE3 /* Awards.json */; };
+		510BDD6729E4BD9000EB6FE3 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BDD6629E4BD9000EB6FE3 /* Award.swift */; };
+		510BDD6929E4BECF00EB6FE3 /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BDD6829E4BECF00EB6FE3 /* AwardsView.swift */; };
 		5131914029D10724008592CD /* MyPortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5131913F29D10724008592CD /* MyPortfolioApp.swift */; };
 		5131914229D10724008592CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5131914129D10724008592CD /* ContentView.swift */; };
 		5131914429D10725008592CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5131914329D10725008592CD /* Assets.xcassets */; };
@@ -24,6 +29,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		510BDD6029E4B24300EB6FE3 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		510BDD6229E4BCB400EB6FE3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		510BDD6329E4BCB400EB6FE3 /* Awards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Awards.json; sourceTree = "<group>"; };
+		510BDD6629E4BD9000EB6FE3 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
+		510BDD6829E4BECF00EB6FE3 /* AwardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
 		5131913C29D10724008592CD /* MyPortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5131913F29D10724008592CD /* MyPortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortfolioApp.swift; sourceTree = "<group>"; };
 		5131914129D10724008592CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,12 +90,17 @@
 				5131915829D1F286008592CD /* SidebarView.swift */,
 				517EA39629D498C7008EC13B /* InterestRow.swift */,
 				5131914129D10724008592CD /* ContentView.swift */,
+				510BDD6029E4B24300EB6FE3 /* Bundle-Decodable.swift */,
 				5131915A29D1F293008592CD /* DetailView.swift */,
 				517EA39829D4EA28008EC13B /* InterestView.swift */,
+				510BDD6829E4BECF00EB6FE3 /* AwardsView.swift */,
 				517EA39A29D4EA89008EC13B /* NoInterestView.swift */,
 				517EB19329D21577003EC831 /* Interest-CoreDataHelpers.swift */,
 				517EB19529D21D1D003EC831 /* Tag-CoreDataHelpers.swift */,
 				5131915129D10A5B008592CD /* Main.xcdatamodeld */,
+				510BDD6329E4BCB400EB6FE3 /* Awards.json */,
+				510BDD6629E4BD9000EB6FE3 /* Award.swift */,
+				510BDD6229E4BCB400EB6FE3 /* Colors.xcassets */,
 				5131914329D10725008592CD /* Assets.xcassets */,
 				5131914529D10725008592CD /* MyPortfolio.entitlements */,
 				5131914629D10725008592CD /* Preview Content */,
@@ -159,6 +174,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510BDD6429E4BCB400EB6FE3 /* Colors.xcassets in Resources */,
+				510BDD6529E4BCB400EB6FE3 /* Awards.json in Resources */,
 				5131914829D10725008592CD /* Preview Assets.xcassets in Resources */,
 				5131914429D10725008592CD /* Assets.xcassets in Resources */,
 			);
@@ -172,9 +189,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5131915D29D1F3C5008592CD /* Filter.swift in Sources */,
+				510BDD6729E4BD9000EB6FE3 /* Award.swift in Sources */,
+				510BDD6929E4BECF00EB6FE3 /* AwardsView.swift in Sources */,
 				517EB19629D21D1D003EC831 /* Tag-CoreDataHelpers.swift in Sources */,
 				517EA39929D4EA28008EC13B /* InterestView.swift in Sources */,
 				5131915329D10A5B008592CD /* Main.xcdatamodeld in Sources */,
+				510BDD6129E4B24300EB6FE3 /* Bundle-Decodable.swift in Sources */,
 				517EB19429D21577003EC831 /* Interest-CoreDataHelpers.swift in Sources */,
 				5131915B29D1F293008592CD /* DetailView.swift in Sources */,
 				5131915529D10D37008592CD /* DataController.swift in Sources */,
