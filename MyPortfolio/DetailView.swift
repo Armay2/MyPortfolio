@@ -17,8 +17,9 @@ struct DetailView: View {
             } else {
                 NoInterestView()
             }
-        }.navigationTitle("Details")
-        .navigationBarTitleDisplayMode(.inline)
+        }
+        .navigationTitle("Details")
+//        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

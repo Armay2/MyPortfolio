@@ -16,9 +16,7 @@ struct NoInterestView: View {
             .font(.title)
             .foregroundStyle(.secondary)
 
-        Button("New Interest") {
-            // code
-        }
+        Button("New Interest", action: dataController.newInterest)
     }
 }
 

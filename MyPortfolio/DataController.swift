@@ -208,4 +208,26 @@ class DataController: ObservableObject {
         
         return allInterest.sorted()
     }
+    
+    func newTag() {
+        let tag = Tag(context: container.viewContext)
+        tag.id = UUID()
+        tag.name = "New tag"
+        save()
+    }
+    
+    func newInterest() {
+        let interest = Interest(context: container.viewContext)
+        interest.title = "New Interest"
+        interest.creationDate = .now
+        interest.priority = 1
+        
+        if let tag = selectedFilter?.tag {
+            interest.addToTags(tag)
+        }
+        
+        save()
+        
+        selectedInterest = interest
+    }
 }
