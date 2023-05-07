@@ -79,6 +79,25 @@ struct InterestView: View {
         .onReceive(interest.objectWillChange) { _ in
             dataController.queueSave()
         }
+        .onSubmit {
+            dataController.save()
+        }
+        .toolbar {
+            Menu {
+                Button {
+                    UIPasteboard.general.string = interest.title
+                } label: {
+                    Label("Copy Interest title", systemImage: "doc.on.doc")
+                }
+                Button {
+                    interest.isDoing.toggle()
+                } label: {
+                    Label(interest.isDoing ? "Close interest" : "Open interest" , systemImage: "bubble.left.and.exclamationmark.bubble.right")
+                }
+            } label: {
+                Label("Action", systemImage: "ellipsis.circle")
+            }
+        }
     }
 }
 

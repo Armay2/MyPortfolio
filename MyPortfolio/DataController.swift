@@ -102,6 +102,8 @@ class DataController: ObservableObject {
     }
     
     func save() {
+        saveTask?.cancel()
+        
         if container.viewContext.hasChanges {
             try? container.viewContext.save()
         }
@@ -206,7 +208,7 @@ class DataController: ObservableObject {
         
         let allInterest = (try? container.viewContext.fetch(request)) ?? []
         
-        return allInterest.sorted()
+        return allInterest
     }
     
     func newTag() {
