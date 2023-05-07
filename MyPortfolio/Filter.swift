@@ -13,6 +13,10 @@ struct Filter: Identifiable, Hashable {
     var icon: String
     var minModificationDate = Date.distantPast
     var tag: Tag?
+        
+    var doingInterestCount: Int {
+        tag?.tagDoingInterest.count ?? 0
+    }
     
     static var all = Filter(id: UUID(), name: "All Interests", icon: "tray")
     static var recent = Filter(id: UUID(), name: "Recent Interests", icon: "clock", minModificationDate: .now.addingTimeInterval(86400 * -7)) // Past 7 days

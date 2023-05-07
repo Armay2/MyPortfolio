@@ -32,8 +32,8 @@ struct InterestRow: View {
 
                 VStack(alignment: .trailing) {
                     Text(interest.interestCreationDate.formatted(date: .numeric, time: .omitted))
+                        .accessibilityLabel("\(interest.interestCreationDate.formatted(date: .abbreviated, time: .omitted))")
                         .font(.subheadline)
-                    
                     if interest.isDoing {
                         Text ("Doing" )
                         .font(.body.smallCaps())
@@ -42,6 +42,7 @@ struct InterestRow: View {
                 // more code to come
             }
         }
+        .accessibilityHint(interest.priority == 2 ? "High priority" : "")
     }
 }
 
